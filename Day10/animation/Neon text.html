@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon text</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            
+            color: aqua;
+            animation: glow 2s alternate;
+        }
+        @keyframes glow{
+            from{
+                text-shadow: 0 0 5px aqua, 0 0 10px aqua;
+            }
+            to{
+                text-shadow: 0 0 20px red, 0 0 40px red ;
+            }
+        }
+
+        </style>
+</head>
+<body>
+    <h1> Neon Text Glow</h1>
+    
+</body>
+</html>

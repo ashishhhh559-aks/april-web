@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner</title>
+    <style>
+        .loader{
+            
+            height: 200px;
+            width: 200px;
+            border: 5px solid lightgreen;
+            border-top: 5px dotted blue;
+            border-right: 5px dotted blue;
+            border-bottom: 5px dotted blue;
+        
+            
+            border-radius: 50%;
+            animation: spin 5s linear infinite ;
+        }
+        @keyframes spin{
+            from{
+                transform: rotate(0);
+
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" ></div>
+</body>
+</html>
