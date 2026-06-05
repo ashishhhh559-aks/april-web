@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTypes</title>
+</head>
+<body>
+    <script>
+        //dataType- Types of data
+
+        //1.string--> "anything between the double quotes or single quotes -text"
+
+            var customername="john"
+        
+            //builtIn Methods are like features in programing language- we can use directly
+            //typeof(Value)
+        console.log(typeof(customername))
+
+        //2.Number--> -ve, +ve, decimal no.
+
+        var age=25
+        console.log(typeof(age))
+
+        //3.bollean --> true or false
+
+        var LoggedIn=true
+
+        var Netflixsub="False"
+
+         var nutflex= false
+
+        console.log(typeof(LoggedIn))
+
+        console.log(typeof(Netflixsub))
+
+        console.log(typeof(nutflex))
+
+        //Null--> Nothing
+
+        var a=null;
+
+        console.log( typeof(a)) 
+
+        //*note-> due to the bug in the javascript Data type of null shows  object as output
+
+        //undefined - When no value is assigned
+        var b 
+
+        console.log(typeof(b))
+
+
+
+
+        //datatype2-
+        // Array-> To store multiple data of different Data typesas well
+        //symbol->[ ] square bracket
+        //Rule-> Index number starts with 0 (Zero)
+        
+        var students = [ "john ", "bob", "ram", true, 558 ]
+        console.log(students)
+
+        // Access the Data ArrayName[indexNo.]
+
+        console.log(students[1])
+        console.log(students[0])
+        console.log(students[4])
+
+        //Object -> coolection of data 
+        //Symbol -> { } curly bracket
+        //rule -> (left)key:value(right) pair
+        
+        var employee={
+            name:"om" ,
+            email:"om@gmail.com" ,
+            id:121232,
+            working:true
+        }
+
+        //Access The Value in Object By using - ObjectName.keyname
+
+        console.log(employee.email)
+
+        //Function-> To do a task
+        //Keyword-> function
+        //Symbol-> ()
+
+        //Task: Build a BillCalcualtor
+
+        function BillCalculator() {
+
+            // Body of function - Instruction 
+            var Product1="milk"
+            var Product2="bread"
+
+            
+            var Price2 = 50
+            var Price3 = 100 
+            var TotalBill= Price3 + Price4;
+
+            console.log("The total bill is" , TotalBill)
+        }
+        BillCalculator()  // calling function
+
+
+
+
+
+    </script>
+</body>
+</html>

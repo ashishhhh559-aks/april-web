@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator</title>
+</head>
+<body>
+    <script>
+        // Arthimetic Operator= + , - ,/ , * , %
+
+        var a=10
+        var b=15
+
+        console.log(a+b) //25
+        console.log(a-b) //-5
+        console.log(a*b) //150
+        console.log(a/b) //0.66
+        console.log(a%b) //10
+
+        // Assignment operator -> To assign value "="
+
+        var x = 10 
+
+        console.log(x=x+5)
+        console.log(x+=3)
+        console.log(x-=3)
+
+        //comparison operator
+
+        var p=25
+        var q=20
+
+        console.log(p>q)
+        console.log(p<q)
+
+        var abc=10
+        var pqr=10
+
+        console.log(abc>=pqr)
+        console.log(abc<=pqr)
+        console.log(abc==pqr)
+
+         const height1="170" //string
+        const height2=170  //number
+
+
+        // == Only check the value not data Type
+
+        console.log(height1==height2)
+
+        //=== check the value and datatype both
+        console.log(height1===height2)
+
+        // Logical Operator - AND, OR, Negation
+
+        // AND - && : If both condition is true then only output is true
+
+        var ismember = true
+        var TotalPrice = 499.99
+
+        console.log( ismember && TotalPrice >= 500)
+        console.log( ismember && TotalPrice >= 499)
+
+        //OR || Only if the condition is true then condition is true
+
+        var JioHotstarLogin = true
+        var PaidSub = false
+
+        console.log( "Can watch ipl as free access" , JioHotstarLogin || PaidSub)
+
+        // Negation-> ! : Opposite Value
+
+        let NetflixSubscription=false
+
+        console.log("Amount Paid" , !NetflixSubscription)
+
+       
+    </script>
+    
+</body>
+</html>
