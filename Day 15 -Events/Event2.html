@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event2</title>
+    <style>
+        #mydiv{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            overflow: auto;
+            margin-top: 15px;
+        }
+        .content{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2 > Welcome To Event </h2>
+
+    <input id="myInput" placeholder="Type something to search..">
+
+    <div id="mydiv">
+        <div class="content"> Scroll Inside Me</div>
+    </div>
+
+    <script>
+        // Step1.select the event
+
+        const input=document.getElementById('myInput')
+        const div=document.getElementById('mydiv')
+
+        // Step2.Capture The Event./Action (addEventlistner)
+
+        // 1.Key-up - When key is released you get output
+        
+       /* input.addEventListener('keyup', function(e){
+            console.log('key released -',  e.key )
+        })*/
+
+        //2. Key-Down- When key is Pressed get output
+
+        /*input.addEventListener('keydown', function(e){
+            console.log('key released -',  e.key )
+        })*/
+
+        // 3.Change Event: Change Happening in the input
+
+        input.addEventListener('change', function(e){
+            console.log('Value of input -',  e.target.value )
+               
+        })
+
+        //4.MouseOver - Moving mouse on something
+
+        div.addEventListener('mouseover', function(){
+            div.style.backgroundColor="red"
+        })
+
+        //5. Mouseout - Moving mouse off to something
+
+         div.addEventListener('mouseout', function(){
+            div.style.backgroundColor="green"
+        })
+
+
+
+    </script>
+
+</body>
+</html>

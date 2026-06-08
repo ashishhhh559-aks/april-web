@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <style>
+
+        body{
+            text-align: center;
+            background-color: yellowgreen;
+            justify-content: center;
+
+
+        }
+        .piano{
+            justify-self: center;
+            background-color: aqua;
+            height: 200px;
+            width: 350px;
+            text-align: center bottom ;
+            display: flex;
+            justify-content:center;
+            align-items:last baseline;
+        
+            border: 5px solid black;
+
+        }
+        .key{
+            background-color: white;
+            height: 150px;
+            width: 50px ;
+            border: 2px solid burlywood;
+            margin: 2px;    
+            box-shadow: 2px 2px 5px;  
+            cursor: pointer;      
+            transition:background-color 0.3s  ;
+
+        }
+
+        .key:active{
+            background-color: antiquewhite;
+        }
+       
+
+    </style>
+
+
+</head>
+<body>
+    <h1>This is online Piano</h1>
+
+    <div class="piano">
+    
+        <div class="key" data-note="A">Sa</div>
+        <div  style="background-color: black; color: azure;" class="key"  data-note="B">Re</div>
+        <div class="key" data-note="C">Ga</div>
+        <div style="background-color: black;  color: azure;" class="key" data-note="D" >Ma</div>
+        <div class="key" data-note="E">P</div>
+        <div style="background-color: black; color: azure;" class="key" data-note="F">Dh</div>
+        <div class="key" data-note="G">Ni</div>
+
+    </div>
+
+    <audio id="audio-A" src="./11325622-wind-up-tone-effect-240240.mp3"  ></audio>
+    <audio id="audio-B" src="./freesound_community-generic-censor-tone-104518.mp3"  ></audio>
+    <audio id="audio-C" src="./freesound_community-harmonium-13610hz-47942.mp3"  ></audio>
+    <audio id="audio-D" src="./freesound_community-harmonium-c3-96340.mp3"  ></audio>
+    <audio id="audio-E" src="./senthilkumarnew-soft-ring-tone-313009.mp3"  ></audio>
+    <audio id="audio-F" src="./soundreality-kitchen-tone-450982 (2).mp3"  ></audio>
+    <audio id="audio-G" src="./subhamita-harmonium-sound-effect-01-320842 (1).mp3"  ></audio>
+    
+
+    <script>
+
+        const keys=document.querySelectorAll(".key")
+        console.log(keys)
+
+        //Key will be an array because it is storing multiple div container
+
+        keys.forEach( function(e) {
+            const note = e.getAttribute("data-note")
+
+            const audio = document.getElementById("audio-" +note)
+
+           e.addEventListener('click', function(){
+                audio.currentTime = 0;
+               audio.play()
+            })
+
+
+         //Mouse
+
+              e.addEventListener('mouseover' , function(){
+            e.style.backgroundcolor ="blue"
+        })
+
+                e.addEventListener('mouseout' , function(){
+            e.style.backgroundcolor="gary"
+        })
+    })
+        
+
+       
+
+      
+
+
+    </script>
+</body>
+</html>

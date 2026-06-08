@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manupulation2</title>
+</head>
+<body>
+    <p id="text"> Hii Everyone </p>
+
+    <button id="btn">Login</button>
+
+
+    <div id="myDiv">This is Div</div>
+
+
+    <p id="myid">This is Old Para</p>
+
+
+    <script>
+        // Update Text Content
+        const ele =  document.getElementById("text")
+
+        ele.textContent = "Hello Everyone How are you?"
+
+        const button = document.getElementById("btn")
+        button.textContent = "Logout"
+
+
+        // innerHTML - Help us To Update Tag or Change The Content of Tag
+        const ele2 = document.getElementById("myDiv") 
+
+    //     ele2.innerHTML = "<h1>This is Now Heading</h1>"
+
+          ele2.innerHTML = `
+          <p>Hello This is <mark>Upated</mark>Tag  </p>
+          <em>Happy Weekend</em>
+          <button>Smile</button>
+          `
+
+        const ele3 = document.getElementById("myid")
+        
+        ele3.style.color = "white" 
+        ele3.style.backgroundColor="red"
+        ele3.textContent = "Hi I am New Stylish Paragraph"
+    </script>
+</body>
+</html>

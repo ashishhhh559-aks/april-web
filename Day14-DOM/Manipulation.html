@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation</title>
+</head>
+<body>
+        <p id="text"> Hii Everyone</p>
+
+        <butoon id="btn"> Login </butoon>
+
+        <div id="myDiv"> This is div </div>
+
+        <p id="myid"> This is old Para</p>
+
+    <script>
+
+        // Update text Content
+
+        const ele = document.getElementById("text")
+        
+        ele.textContent= "Hello Everyone how are you?"
+
+        const button= document.getElementById("btn")
+        button.textContent="Logout"
+
+        //Inner HTML - Helps us to Update Tag or change the content of tag
+
+        const ele2 = document.getElementById("myDiv")
+
+        // ele2.inner HTML= "<h1> This is now Heading </h1>"
+
+        ele2.innerHTML = " <p> Hello This is <mark> Update </mark>Tag </p> <em> Happy Weekend </em> <button> Smile </button> "
+
+         const ele3 = document.getElementById("myid")
+
+         ele3.style.color = "white"
+         ele3.style.backgroundColor="red"
+         ele3.textContent=" Hii i am new stylish program "
+
+    </script>
+</body>
+</html>

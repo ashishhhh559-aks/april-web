@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleceMethod</title>
+</head>
+<body>
+    <p id="myp">This is a Paragraph</p>
+
+    <div class="myc">This is Div 0</div>
+     <div class="myc">This is Div 1</div>
+
+     <p> this is paragraph-1</p>
+     <p> this is paragraph-2</p>
+
+     <div class="box"> HTML </div>
+     
+     <div class="box"> javascript </div>
+
+    <script>
+        // Select Element/Tag From HTML
+
+        //1. getElementById("value of id")
+        // Document- Webpage in js
+        //textcontent- Content of Tag
+
+        const ele =  document.getElementById("myp")
+        console.log(ele)
+        console.log(ele.textContent)
+
+
+        //2. ClassName("Value of classname")
+        const abc= document.getElementsByClassName("myc")
+
+        console.log(abc)
+        console.log(abc[1].textContent)
+
+        //3. Tagname("Value")
+
+        const xyz=document.getElementsByTagName("p")
+        console.log(xyz)
+        console.log(xyz[1].textContent)
+
+        // Queryselector()- Follow the rule of CSS Selector-  .class , #id , Tagname
+
+        const aks =  document.querySelector(".box")
+        console.log(aks)
+
+        //5. QuerySelectorAll() - All the Elements/Tag
+        const mnp= document.querySelectorAll(".box")
+        console.log(mnp)
+        
+    </script>
+</body>
+</html>
