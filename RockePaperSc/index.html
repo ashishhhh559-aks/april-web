@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock Paper Scissor</h1>
+
+    <div class="choices">
+        <button class="rock" onclick="playGame('rock')"      >Rock</button>
+
+        <button class="paper"  onclick="playGame('paper')"     >Paper</button>
+
+        <button class="scisscor" onclick="playGame('scissors')"   >Scissor</button>
+    </div>
+
+    <p id="result">Choose an Option To Start the Game</p>
+
+    <div class="scoreboard">
+        <p><strong>ScoreBoard</strong></p>
+        <p>Wins   <span id="wins">0</span>  </p>
+        <p>Losses <span id="losses">0</span> </p>
+        <p>Draw   <span id="draws">0</span> </p>
+    </div>
+
+
+    <script>
+      
+      let wins = 0
+      let losses = 0
+      let draws = 0
+
+      function playGame(userChoice){
+
+        const choices = ['rock' , 'paper' ,'scissors']
+
+        const computerChoice = choices[Math.floor( Math.random()*3)]
+
+        let resultMessage = ""
+
+        //Logic Game
+
+        if(userChoice === computerChoice){
+            resultMessage = 'You Pick The Same Option , It is Draw' + userChoice
+            draws++
+        }
+        else if(
+             (userChoice ==='rock' && computerChoice ==='scissors') ||
+             (userChoice ==='paper' && computerChoice ==='rock') ||
+             (userChoice ==='scissors' && computerChoice ==='paper')
+
+        ){
+            resultMessage = "You Won " + userChoice + ' Beats ' + computerChoice
+            wins++
+        }else{
+            resultMessage = "You Loose " + computerChoice + ' Beats ' + userChoice
+            losses++
+        }
+
+        //DOM
+
+        const ele = document.getElementById('result')
+        ele.style.color = 'red'
+        document.getElementById('result').innerHTML = resultMessage
+        document.getElementById('wins').innerHTML = wins
+        document.getElementById('losses').innerHTML = losses
+        document.getElementById('draws').innerHTML = draws
+
+      }
+
+      
+
+
+
+    </script>
+</body>
+</html>

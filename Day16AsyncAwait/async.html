@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+     <script>
+            //Task 1 - Make Coffe
+             function StartTask(){  
+                console.log("Step 1 : Boil The Water (5 Sec)")
+                
+                setTimeout(()=>{
+                         console.log("Step 2 : Water is Ready")
+                },5000)
+
+                console.log("Step 3 : Doing Other Task As Well ")
+
+             }
+             StartTask()
+
+            //Task 2 - Second- Greeting
+            function Greeting(name){
+                console.log(`Hi Everyone My Name is ${name}   `)
+            }
+            Greeting("Rasika")
+
+     </script>
+</body>
+</html>
