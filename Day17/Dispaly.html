@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .movie{
+            border: 2px solid brown;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: auto;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .movie:hover{
+            transform: scale(1.03);
+            box-shadow: 2px 4px 8px black;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Details</h1>
+
+    <input type="text" id="movieInput" placeholder="Enter Your Name">
+
+    <button onclick="HandleSearch()">Search Movie</button>
+
+    <div class="movie" id="movieContainer">
+
+    </div>
+
+    <script>
+   
+      async function getMovie(movieName){
+
+        let url = `http://www.omdbapi.com/?t=${movieName}&apikey=a6606658`
+
+        try{
+          
+           let response  =    await  fetch(url)
+           let data      =    await  response.json()
+
+           console.log(data)
+
+           if(data.Response == "True"){
+             //Showing Output On Webpage  
+           const movieContainer = document.getElementById("movieContainer")
+           movieContainer.innerHTML = `
+           <img src="${data.Poster}" style="width:100%; height:200px; object-fit:cover" >
+           <h2>${data.Title}</h2>
+           <p>${data.Year}</p>
+           <p>${data.Plot}<p>
+           
+           `
+           movieContainer.style.textAlign="center"
+
+
+           }else{
+              alert("Movie Not Found")
+           }
+
+
+        }catch(error){
+                   console.log("Error Fetching Movie" , error)
+        }
+
+      }
+   
+
+
+      function HandleSearch(){
+        const movieName = document.getElementById("movieInput").value
+
+        if(movieName){
+            getMovie(movieName)
+        }
+
+      }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
