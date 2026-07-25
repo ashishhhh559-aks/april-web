@@ -1,42 +1,67 @@
-const API_key = "07761675b0e7742bcf24eae9c2036fad";
+
+const apiKey = "07761675b0e7742bcf24eae9c2036fad";
+
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchBtn");
+
+const cityName = document.getElementById("cityName");
+const temperature = document.getElementById("temperature");
+const description = document.getElementById("description");
+const humidity = document.getElementById("humidity");
+const wind = document.getElementById("wind");
+const weatherIcon = document.getElementById("weatherIcon");
+const error = document.getElementById("error");
 
 async function getWeather() {
-    const city = document.getElementById("city").value.trim();
-    const errorMessage = document.getElementById("error-message");
+
+    const city = cityInput.value.trim();
 
     if (city === "") {
-        errorMessage.innerText = "Please enter city name!";
+        error.innerText = "Please enter a city name.";
         return;
     }
 
-    try {
-        const response = await fetch( `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=metric` );
+    error.innerText = "";
 
+    const url =
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+
+        const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
 
         if (data.cod != 200) {
-            errorMessage.innerText = data.message;
+            error.innerText = "City not found!";
             return;
         }
 
-        errorMessage.innerText = "";
+        
+        cityName.innerText = data.name;
+        temperature.innerText = Math.round(data.main.temp) + "°C";
+        description.innerText = data.weather[0].description;
+        humidity.innerText = data.main.humidity + "%";
+        wind.innerText = data.wind.speed + " km/h";
 
-        document.getElementById("city-name").innerText = data.name;
-        document.getElementById("temp").innerText =
-            "Temperature: " + data.main.temp + " °C";
+        const iconCode = data.weather[0].icon;
+        weatherIcon.src =
+            `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
-        document.getElementById("condition").innerText =
-            "Condition: " + data.weather[0].main;
-
-        document.getElementById("humidity").innerText =
-            "Humidity: " + data.main.humidity + "%";
-
-        document.getElementById("wind").innerText =
-            "Wind Speed: " + data.wind.speed + " m/s";
-
-    } catch (error) {
-        errorMessage.innerText = "Something went wrong!";
-        console.log(error);
     }
+
+    catch (err) {
+        error.innerText = "Something went wrong!";
+        console.log(err);
+    }
+
 }
+
+searchBtn.addEventListener("click", getWeather);
+
+cityInput.addEventListener("keypress", function (event) {
+
+    if (event.key === "Enter") {
+        getWeather();
+    }
+
+});
